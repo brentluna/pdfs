@@ -3,27 +3,28 @@ import {login, logout, signup} from '../util/session_api.js';
 import {hashHistory} from 'react-router';
 
 const SessionMiddleware = store => next => action => {
+  console.log(action)
   const success = user => {
     store.dispatch(receiveUser(user));
     const interval = setInterval(() => {
       if (store.getState().session.currentUser){
-        hashHistory.push('/');
+        hashHistory.push('/pdfs');
         clearInterval(interval);
       }
     }, 50);
   }
 
   const logoutSuccess = () => {
-    const interval = setInterva(() => {
+    const interval = setInterval(() => {
       if (!store.getState().session.currentUser) {
-        hashHistory.push('/login');
+        hashHistory.push('/pdfs');
         clearInterval(interval);
       }
     }, 50);
   }
 
-  const error = xhr => store.dispatch(receiveErrors(xrh.responseJSON));
-
+  const error = xhr => store.dispatch(receiveErrors(xhr.responseJSON));
+  console.log('SessionMiddleware:',action)
   switch(action.type) {
     case SessionConstants.LOGIN:
       login(action.user, success, error);

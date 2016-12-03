@@ -10,10 +10,12 @@ const nullUser = Object.freeze({
 const SessionReducer = (state = nullUser, action) => {
   switch(action.type) {
     case SessionConstants.RECEIVE_USER:
-      return merge({}, nullUser, {action.user});
+      const currentUser = action.user;
+      return merge({}, nullUser, {currentUser});
     case SessionConstants.LOGOUT:
       return merge({}, nullUser);
     case SessionConstants.RECEIVE_ERRORS:
+      const errors = action.errors
       return merge({}, nullUser, {errors});
     default:
       return state; 
