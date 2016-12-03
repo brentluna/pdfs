@@ -52,15 +52,17 @@ class Login extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='login-container'>
         <form className='login-form'>
           {this.renderErrors()}
-          <div>
+          <div className='input-container'>
             <input type='text' placeholder='username' onChange={this.update('username')} />
             <input type='password' placeholder='password' onChange={this.update('password')} />
           </div>
-          <input type='submit' value='Login' onClick={this.handleLogin} />
-          <input type='submit' value='Signup' onClick={this.handleSignup} />
+          <div className='login-button-div'>
+            <input type='submit' value='Login' onClick={this.handleLogin} />
+            <input type='submit' value='Signup' onClick={this.handleSignup} />
+          </div>
         </form>
       
       </div>

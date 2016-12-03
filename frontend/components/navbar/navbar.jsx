@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Navbar = (props) => {
-  debugger
   const logoutButton = () => {
-    debugger
     if (props.loggedIn) {
       return(
         <input type='submit' value='logout' onClick={props.logout} />
@@ -12,15 +10,13 @@ const Navbar = (props) => {
     }
   }
   return (
-    <header>
-      <div>
-        <div>
+    <header className='navbar'>
+        <div className='title-div'>
           <h1>PDF</h1>
         </div>
-        <div>
+        <div className='logout-div'>
           {logoutButton()}
         </div>
-      </div>
     </header>
   )
 }
