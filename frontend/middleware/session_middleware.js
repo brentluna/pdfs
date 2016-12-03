@@ -17,7 +17,7 @@ const SessionMiddleware = store => next => action => {
   const logoutSuccess = () => {
     const interval = setInterval(() => {
       if (!store.getState().session.currentUser) {
-        hashHistory.push('/pdfs');
+        hashHistory.push('/login');
         clearInterval(interval);
       }
     }, 50);
