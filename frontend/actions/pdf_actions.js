@@ -25,14 +25,16 @@ export const receivePdfs = pdfs => ({
 });
 
 
-export const createPdf = pdf => ({
+export const createPdf = (pdf, name) => ({
   type: PdfConstants.CREATE_PDF,
-  pdf
+  pdf,
+  name
 });
 
-export const receiveUrl = url => ({
+export const receiveUrl = (url, name) => ({
   type: PdfConstants.RECEIVE_URL,
-  url
+  url,
+  name
 });
 
 export const allUrlsReceived = urls => ({

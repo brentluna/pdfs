@@ -19,12 +19,12 @@ const PdfMiddleware = store => next => action => {
       return next(action);
      
     case PdfConstants.RECEIVE_PRESIGNED_URL:
-      const receivedPresignedSuccess = url => store.dispatch(receiveUrl(url));
+      const receivedPresignedSuccess = url => store.dispatch(receiveUrl(url, action.file.name));
       uploadToS3(action.file, action.url, receivedPresignedSuccess);
       return next(action);
     case PdfConstants.RECEIVE_URL:
       const receiveUrlSuccess = pdf => store.dispatch(receivePdf(pdf))
-      createPdf(action.url, receiveUrlSuccess);
+      createPdf(action.url, action.name, receiveUrlSuccess);
       return next(action);
     default:
       return next(action);
