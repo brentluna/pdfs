@@ -5,12 +5,16 @@ import Dropzone from 'react-dropzone';
 class PDF extends React.Component {
   constructor(props) {
     super(props);
-    this.onDrop = this.onDrop.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
-
+  
+  compondentDidMount(){
+    this.props.fetchPdfs();
+  }
 
   handleUpload(file) {
     debugger 
+    this.props.createPdf(file);
   }
   render(){
     return (

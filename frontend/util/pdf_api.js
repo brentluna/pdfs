@@ -17,12 +17,12 @@ export const getPresignedUrl = (data, success) => (
   })
 )
 
-export const createPdf = pdf => (
+export const createPdf = (pdf, success) => (
   $.ajax({
     url: 'api/pdfs',
     method: 'POST',
     success,
-    error: e => console.log('error in createPdf:', e);
+    error: e => console.log('error in createPdf:', e)
   })
 )
 

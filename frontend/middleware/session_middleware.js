@@ -3,7 +3,6 @@ import {login, logout, signup} from '../util/session_api.js';
 import {hashHistory} from 'react-router';
 
 const SessionMiddleware = store => next => action => {
-  console.log(action)
   const success = user => {
     store.dispatch(receiveUser(user));
     const interval = setInterval(() => {
