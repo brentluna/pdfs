@@ -12,10 +12,16 @@ class PDF extends React.Component {
     this.props.fetchPdfs();
   }
 
-  handleUpload(file) {
+  handleUpload(obj) {
     debugger 
-    this.props.fetchPresignedUrl(file[0]);
+    const file = obj[0] 
+    if (file.type === 'application/pdf') {
+      this.props.fetchPresignedUrl(file[0]);
+    } else {
+      alert('Invalid File Type: Must be a PDF')
+    }
   }
+
   render(){
     return (
       <div className='pdf-page-container'>

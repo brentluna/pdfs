@@ -11,12 +11,14 @@ const Navbar = (props) => {
   }
   return (
     <header className='navbar'>
+      <div className='navbar-group'>
         <div className='title-div'>
-          <h1>PDF</h1>
+          <h1>PDF Storage</h1>
         </div>
         <div className='logout-div'>
           {logoutButton()}
         </div>
+      </div>
     </header>
   )
 }

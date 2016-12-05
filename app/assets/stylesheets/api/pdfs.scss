@@ -2,9 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.pdfs-container {
-
+.pdf-page-container {
+  background: white;
+  width: 75%;
+  margin: 0 auto;
+  padding: 40px 0px;
+  min-height: calc(100vh - 200px);
 }
+
 
 .pdf-li {
   width: 250px;
@@ -28,26 +33,30 @@
 }
 
 .dropzone {
-  margin: 50px auto;
+  cursor: pointer;
+  margin: 0 auto;
   height: 150px;
   width: 300px;
-  border: 1px dashed #ccc;
+  border: 1px dashed #ff4081;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   text-align: center;
+  background: white;
 }
 
 i.material-icons.cloud-icon {
   font-size: 44px;
   text-align: center;
+  color: #ff4081;
 }
 .pdfs-ul {
-  width: 80%;
+  background: white;
   display:flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding: 20px;
 }
 
 

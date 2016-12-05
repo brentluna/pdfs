@@ -29,7 +29,10 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+  font-family: 'Roboto', sans-serif;
 	line-height: 1;
+  padding-bottom: 20px;
+  background: #c5cae9;
 }
 ol, ul {
 	list-style: none;
