@@ -18,11 +18,12 @@ class PDF extends React.Component {
   }
   render(){
     return (
-      <div>
-        <h2>Inside PDF </h2>
-        <Dropzone onDrop={this.handleUpload}>
+      <div className='pdf-page-container'>
+        <Dropzone className='dropzone' onDrop={this.handleUpload}>
+          <i className='material-icons cloud-icon'>cloud_upload</i>
           <div>
-            Drag and Drop file or Click here to select file from local storage.
+       
+           Drag and drop or click to select file  
           </div>
         </Dropzone>
         <div>

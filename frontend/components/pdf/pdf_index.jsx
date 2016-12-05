@@ -12,8 +12,10 @@ const PdfIndex = ({pdfs}) => {
         let currPdf = pdfs[pdf];
         lis.push(
           <li key={pdf} className='pdf-li'>
+           
             <a href={currPdf.url} target='_blank'>
-            <PDFViewer file={currPdf.url} />
+              <PDFViewer file={currPdf.url} />
+              <h4>{currPdf.title}</h4>
           </a>
           </li>
         )
