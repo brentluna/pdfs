@@ -1,15 +1,15 @@
-import {PdfConstants, receivePresignedUrl, receiveUrl} from '../actions/pdf_actions';
+import {PdfConstants, receivePresignedUrl, receiveUrl, fetchPdf, receivePdfs, receivePdf} from '../actions/pdf_actions';
 import {fetchAllPdfs, getPresignedUrl, createPdf, uploadToS3, allUrlsReceived} from '../util/pdf_api';
 
 const PdfMiddleware = store => next => action => {
   console.log(action)
   switch(action.type){
     case PdfConstants.FETCH_PDFS:
-      const fetchSuccess = pdfs => store.dispatch(allUrlsReceived(pdfs));
+      const fetchSuccess = pdfs => store.dispatch(receivePdfs(pdfs));
       fetchAllPdfs(fetchSuccess);
       return next(action);
     case PdfConstants.CREATE_PDF:
-      const createSuccess = () => store.dispatch(fetchAllPdfs());
+      const createSuccess = pdf => store.dispatch(receivePdf(pdf));
       createPdf(createSuccess);
       return next(action);
     case PdfConstants.FETCH_PRESIGNED_URL:
@@ -21,7 +21,11 @@ const PdfMiddleware = store => next => action => {
     case PdfConstants.RECEIVE_PRESIGNED_URL:
       const receivedPresignedSuccess = url => store.dispatch(receiveUrl(url));
       uploadToS3(action.file, action.url, receivedPresignedSuccess);
-
+    
+    case PdfConstants.RECEIVE_URL:
+      const receiveUrlSuccess = pdf => store.dispatch(fetchPdf(pdf))
+      createPdf(action.url, receiveUrlSuccess);
+      return next(action);
     default:
       return next(action);
 

@@ -6,12 +6,24 @@ export const PdfConstants = {
   UPLOAD_TO_S3: 'UPLOAD_TO_S3',
   ALL_URLS_RECEIVED: 'ALL_URLS_RECEIVED',
   CREATE_PDF: 'CREATE_PDF',
-
   RECEIVE_PRESIGNED_URL: 'RECEIVE_PRESIGNED_URL',
   RECEIVE_URL: 'RECEIVE_URL',
-  GET_PRESIGNED_URL:'GET_PRESIGNED_URL'
+  GET_PRESIGNED_URL:'GET_PRESIGNED_URL',
+  RECEIVE_PDF: 'RECEIVE_PDF',
+  RECEIVE_PDFS: 'RECEIVE_PDFS'
  
 }
+
+export const receivePdf = pdf => ({
+  type: PdfConstants.RECEIVE_PDF,
+  pdf
+});
+
+export const receivePdfs = pdfs => ({
+  type: PdfConstants.RECEIVE_PDFS,
+  pdfs
+});
+
 
 export const createPdf = pdf => ({
   type: PdfConstants.CREATE_PDF,
