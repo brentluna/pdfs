@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {createPdf, fetchPdfs, fetchPresignedUrl } from '../../actions/pdf_actions';
 
 const mapStateToProps = state => ({
-
+  pdfs: state.pdfs
 });
 
 const mapDispatchToProps = dispatch => ({

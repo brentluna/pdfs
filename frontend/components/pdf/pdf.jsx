@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
-
+import PdfIndex from './pdf_index';
 
 class PDF extends React.Component {
   constructor(props) {
@@ -25,6 +25,9 @@ class PDF extends React.Component {
             Drag and Drop file or Click here to select file from local storage.
           </div>
         </Dropzone>
+        <div>
+          <PdfIndex pdfs={this.props.pdfs} />
+        </div>
       </div>
     )
   }
