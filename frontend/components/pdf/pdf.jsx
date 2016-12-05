@@ -8,7 +8,7 @@ class PDF extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
   
-  compondentDidMount(){
+  componentDidMount(){
     this.props.fetchPdfs();
   }
 

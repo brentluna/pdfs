@@ -7,7 +7,7 @@ const PdfReducer = (state = {}, action) => {
       action.pdfs.forEach(el => {
         allURLS[el.id] = el;
       });
-      return allURLs;
+      return allURLS;
     case PdfConstants.RECEIVE_PDF:
       let updatedUrls = Object.assign({}, state);
       let newPdf = action.pdf;
