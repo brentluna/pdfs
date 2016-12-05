@@ -5,7 +5,7 @@ class Api::PdfsController < ApplicationController
   end
 
   def create
-    @pdf = Pdf.new(pdf_params )
+    @pdf = Pdf.new(pdf_params)
 
     @pdf.user_id = current_user.id
     if @pdf.save
@@ -23,6 +23,10 @@ class Api::PdfsController < ApplicationController
     @pdf = Pdf.find(params[:id])
     @pdf.destroy
     render :index
+  end
+
+  def pdf_params
+    params.require(:pdf).permit(:url, :title)
   end
 
 end

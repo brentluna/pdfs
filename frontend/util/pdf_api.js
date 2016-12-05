@@ -24,7 +24,7 @@ export const createPdf = (pdf, success) => (
   $.ajax({
     url: 'api/pdfs',
     method: 'POST',
-    data: pdf,
+    data: {pdf: {url: pdf}},
     success,
     error: e => console.log('error in createPdf:', e)
   })
