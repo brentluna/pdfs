@@ -1,3 +1,32 @@
 // Place all the styles related to the api/pdfs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pdfs-container {
+
+}
+
+.pdf-li {
+  width: 250px;
+  heigth: 320px;
+  background: #ccc;
+  margin: 20px; 
+  canvas {
+    width: 250px;
+    height: 320px;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, .5);
+
+
+  }
+  
+}
+
+.pdfs-ul {
+  width: 80%;
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+
