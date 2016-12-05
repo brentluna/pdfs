@@ -21,16 +21,17 @@ const SessionMiddleware = store => next => action => {
       }
     }, 50);
   }
-
   const error = xhr => store.dispatch(receiveErrors(xhr.responseJSON));
-  console.log('SessionMiddleware:',action)
   switch(action.type) {
     case SessionConstants.LOGIN:
       login(action.user, success, error);
+      return next(action);
     case SessionConstants.LOGOUT:
       logout(logoutSuccess, error);
+      return next(action);
     case SessionConstants.SIGNUP:
       signup(action.user, success, error);
+      return next(action);
     default:
       return next(action);
   }

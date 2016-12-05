@@ -14,7 +14,7 @@ class PDF extends React.Component {
 
   handleUpload(file) {
     debugger 
-    this.props.createPdf(file);
+    this.props.fetchPresignedUrl(file[0]);
   }
   render(){
     return (

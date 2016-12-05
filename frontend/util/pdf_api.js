@@ -7,15 +7,18 @@ export const fetchAllPdfs = (success) => (
   })
 );
 
-export const getPresignedUrl = (data, success) => (
+export const getPresignedUrl = (data, success) => {
+  const dataPassed = {upload: {prefix: 'file/pdf', filename: data.name}}
+  return(
   $.ajax({
     url: 'api/upload',
     method: 'GET',
-    data: {prefix: data.prefix, filename: data.filename},
+    data: dataPassed,
     success, 
     errors: (e) => console.log('error in getPresignedUrl:', e)
   })
-)
+  )
+}
 
 export const createPdf = (pdf, success) => (
   $.ajax({
@@ -28,6 +31,7 @@ export const createPdf = (pdf, success) => (
 
 
 export const uploadToS3 = (file, url, success) => {
+  debugger
   let presignedUrl = url.presigned_url;
   let publicUrl = url.public_url;
   let filetype = file.type;

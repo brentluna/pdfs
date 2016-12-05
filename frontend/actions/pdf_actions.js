@@ -2,10 +2,15 @@ export const PdfConstants = {
   URL_RECEIVED: 'URL_RECEIVED',
   FETCH_PDF: 'FETCH_PDF',
   FETCH_PDFS:'FETCH_PDFS',
-  GET_PRESIGNED_URL: 'GET_PRESIGNED_URL',
+  FETCH_PRESIGNED_URL: 'FETCH_PRESIGNED_URL',
   UPLOAD_TO_S3: 'UPLOAD_TO_S3',
   ALL_URLS_RECEIVED: 'ALL_URLS_RECEIVED',
-  CREATE_PDF: 'CREATE_PDF'
+  CREATE_PDF: 'CREATE_PDF',
+
+  RECEIVE_PRESIGNED_URL: 'RECEIVE_PRESIGNED_URL',
+  RECEIVE_URL: 'RECEIVE_URL',
+  GET_PRESIGNED_URL:'GET_PRESIGNED_URL'
+ 
 }
 
 export const createPdf = pdf => ({
@@ -13,8 +18,8 @@ export const createPdf = pdf => ({
   pdf
 });
 
-export const urlReceived = url => ({
-  type: PdfConstants.URL_RECEIVED,
+export const receiveUrl = url => ({
+  type: PdfConstants.RECEIVE_URL,
   url
 });
 
@@ -33,12 +38,10 @@ export const fetchPdfs = () => ({
   type: PdfConstants.FETCH_PDFS
 });
 
-export const fetchPresignedURL = (prefix, filename, file) => ({
-  type: PdfConstants.GET_PRESIGNED_URL,
-  prefix: prefix, 
-  filename: filename,
-  file: file
-});
+export const fetchPresignedUrl = (data) => ({
+  type: PdfConstants.FETCH_PRESIGNED_URL,
+  data
+ });
 
 export const uploadToS3 = (presignedUrl, file) => ({
   type: PdfConstants.UPLOAD_TO_S3,
@@ -46,4 +49,9 @@ export const uploadToS3 = (presignedUrl, file) => ({
   file: file
 });
 
+export const receivePresignedUrl = (file, url) => ({
+  type: PdfConstants.RECEIVE_PRESIGNED_URL,
+  url,
+  file
+});
 
