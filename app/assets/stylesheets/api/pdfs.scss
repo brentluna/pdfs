@@ -59,4 +59,22 @@ i.material-icons.cloud-icon {
   padding: 20px;
 }
 
+@media screen and (max-width: 400px) {
+  .dropzone {
+    width: 120px;
+    height: 80px;
+    div {
+      display: none;
+    }
+  }
 
+  .pdf-li {
+    width: 175px;
+    height: 230px;
+    canvas {
+      width: 175px;
+      height: 230px;
+    }
+  }
+
+}
