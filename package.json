@@ -6,11 +6,9 @@
   "directories": {
     "test": "test"
   },
-  {
-    "engines": {
-      "node": "7.1.0",
-      "npm": "4.0.2"
-    }
+  "engines": {
+    "node": "7.1.0",
+    "npm": "4.0.2"
   },
   "dependencies": {
     "babel-core": "^6.18.2",
