@@ -1,6 +1,5 @@
 export const PdfConstants = {
   URL_RECEIVED: 'URL_RECEIVED',
-  FETCH_PDF: 'FETCH_PDF',
   FETCH_PDFS:'FETCH_PDFS',
   FETCH_PRESIGNED_URL: 'FETCH_PRESIGNED_URL',
   UPLOAD_TO_S3: 'UPLOAD_TO_S3',
@@ -53,11 +52,6 @@ export const receiveUrl = (url, name) => ({
 export const allUrlsReceived = urls => ({
   type: PdfConstants.ALL_URLS_RECEIVED,
   urls
-});
-
-export const fetchPdf = pdf => ({
-  type: PdfConstants.FETCH_PDF,
-  pdf
 });
 
 

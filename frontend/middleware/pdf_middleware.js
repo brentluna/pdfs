@@ -2,7 +2,6 @@ import {PdfConstants, receivePresignedUrl, receiveUrl, fetchPdf, receivePdfs, re
 import {fetchAllPdfs, getPresignedUrl, createPdf, uploadToS3, allUrlsReceived, deletePdf} from '../util/pdf_api';
 
 const PdfMiddleware = store => next => action => {
-  console.log(action)
   switch(action.type){
     case PdfConstants.FETCH_PDFS:
       const fetchSuccess = pdfs => store.dispatch(receivePdfs(pdfs));

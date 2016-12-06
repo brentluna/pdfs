@@ -41,7 +41,6 @@ export const createPdf = (pdf, name,  success) => (
 
 
 export const uploadToS3 = (file, url, success) => {
-  debugger
   let presignedUrl = url.presigned_url;
   let publicUrl = url.public_url;
   let filetype = file.type;
