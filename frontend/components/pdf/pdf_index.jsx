@@ -1,6 +1,5 @@
 import React from 'react';
 import PDFViewer from 'react-pdf-js';
-import spdf from 'simple-react-pdf';
 
 
 const PdfIndex = ({pdfs, deletePdf}) => {

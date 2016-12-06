@@ -8,16 +8,19 @@ const PdfReducer = (state = {}, action) => {
         allURLS[el.id] = el;
       });
       return allURLS;
+
     case PdfConstants.RECEIVE_PDF:
       let updatedUrls = Object.assign({}, state);
       let newPdf = action.pdf;
       updatedUrls[newPdf.id] = newPdf;
       return updatedUrls;
+
     case PdfConstants.PDF_DELETED:
       const pdfId = action.pdf.id;
       let deletedObj = Object.assign({}, state);
       delete deletedObj[pdfId];
       return deletedObj;
+
     default:
       return state;
   }
