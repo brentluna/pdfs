@@ -7,6 +7,15 @@ export const fetchAllPdfs = (success) => (
   })
 );
 
+export const deletePdf = (pdf, success) => (
+  $.ajax({
+    url: `api/pdfs/${pdf}`,
+    method: 'DELETE',
+    success,
+    error: e => console.log('error in deletePDF', e)
+  })
+);
+
 export const getPresignedUrl = (data, success) => {
   const dataPassed = {upload: {prefix: 'file/pdf', filename: data.name}}
   return(

@@ -34,9 +34,15 @@
 .login-button-div {
   display: flex;
   justify-content: space-around;
+  margin-top: 20px;
 
   input {
     padding: 10px;
     font-size: 18px;
+    border: 1px solid black;
+    background: #c5cae9; 
   }
 }
+
+
+

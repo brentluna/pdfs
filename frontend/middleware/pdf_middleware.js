@@ -1,5 +1,5 @@
-import {PdfConstants, receivePresignedUrl, receiveUrl, fetchPdf, receivePdfs, receivePdf} from '../actions/pdf_actions';
-import {fetchAllPdfs, getPresignedUrl, createPdf, uploadToS3, allUrlsReceived} from '../util/pdf_api';
+import {PdfConstants, receivePresignedUrl, receiveUrl, fetchPdf, receivePdfs, receivePdf, pdfDeleted} from '../actions/pdf_actions';
+import {fetchAllPdfs, getPresignedUrl, createPdf, uploadToS3, allUrlsReceived, deletePdf} from '../util/pdf_api';
 
 const PdfMiddleware = store => next => action => {
   console.log(action)
@@ -25,6 +25,10 @@ const PdfMiddleware = store => next => action => {
     case PdfConstants.RECEIVE_URL:
       const receiveUrlSuccess = pdf => store.dispatch(receivePdf(pdf))
       createPdf(action.url, action.name, receiveUrlSuccess);
+      return next(action);
+    case PdfConstants.DELETE_PDF:
+      const deleteSuccess = pdf => store.dispatch(pdfDeleted(pdf));
+      deletePdf(action.pdf, deleteSuccess)
       return next(action);
     default:
       return next(action);

@@ -13,10 +13,9 @@ class PDF extends React.Component {
   }
 
   handleUpload(obj) {
-    debugger 
     const file = obj[0] 
     if (file.type === 'application/pdf') {
-      this.props.fetchPresignedUrl(file[0]);
+      this.props.fetchPresignedUrl(file);
     } else {
       alert('Invalid File Type: Must be a PDF')
     }
@@ -33,7 +32,7 @@ class PDF extends React.Component {
           </div>
         </Dropzone>
         <div>
-          <PdfIndex pdfs={this.props.pdfs} />
+          <PdfIndex pdfs={this.props.pdfs} deletePdf={this.props.deletePdf} />
         </div>
       </div>
     )

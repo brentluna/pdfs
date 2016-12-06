@@ -3,7 +3,7 @@ import PDFViewer from 'react-pdf-js';
 import spdf from 'simple-react-pdf';
 
 
-const PdfIndex = ({pdfs}) => {
+const PdfIndex = ({pdfs, deletePdf}) => {
 
   const mapPdfs = () => {
     let lis = [];
@@ -15,8 +15,11 @@ const PdfIndex = ({pdfs}) => {
            
             <a href={currPdf.url} target='_blank'>
               <PDFViewer file={currPdf.url} />
-              <h4>{currPdf.title}</h4>
-          </a>
+            </a>
+              <div className='title-div'>
+                <i className='material-icons trash-icon' onClick={() => deletePdf(pdf)}>delete</i>
+                <h4>{currPdf.title}</h4>
+              </div>
           </li>
         )
 

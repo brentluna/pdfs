@@ -13,6 +13,11 @@ const PdfReducer = (state = {}, action) => {
       let newPdf = action.pdf;
       updatedUrls[newPdf.id] = newPdf;
       return updatedUrls;
+    case PdfConstants.PDF_DELETED:
+      const pdfId = action.pdf.id;
+      let deletedObj = Object.assign({}, state);
+      delete deletedObj[pdfId];
+      return deletedObj;
     default:
       return state;
   }

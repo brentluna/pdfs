@@ -10,9 +10,22 @@ export const PdfConstants = {
   RECEIVE_URL: 'RECEIVE_URL',
   GET_PRESIGNED_URL:'GET_PRESIGNED_URL',
   RECEIVE_PDF: 'RECEIVE_PDF',
-  RECEIVE_PDFS: 'RECEIVE_PDFS'
+  RECEIVE_PDFS: 'RECEIVE_PDFS',
+  DELETE_PDF: 'DELETE_PDF',
+  PDF_DELETED: 'PDF_DELETED'
  
 }
+
+export const pdfDeleted = pdf => ({
+  type: PdfConstants.PDF_DELETED,
+  pdf
+});
+
+export const deletePdf = pdf => ({
+  type: PdfConstants.DELETE_PDF,
+  pdf
+});
+
 
 export const receivePdf = pdf => ({
   type: PdfConstants.RECEIVE_PDF,

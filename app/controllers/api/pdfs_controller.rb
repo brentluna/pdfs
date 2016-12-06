@@ -19,10 +19,22 @@ class Api::PdfsController < ApplicationController
     @pdfs = current_user.pdfs
   end
 
-  def destory 
+  def destroy 
     @pdf = Pdf.find(params[:id])
+    
     @pdf.destroy
-    render :index
+    delete_from_S3(@pdf)
+    render :show 
+  end 
+  
+  private 
+  def delete_from_S3(pdf)
+    pdf_key = pdf.url.split('amazonaws.com/').last
+    puts pdf_key
+    s3 = Aws::S3::Resource.new(region: 'us-west-1')  
+    bucket = s3.bucket('brent-pdfs')
+    obj = bucket.object(pdf_key)
+    obj.delete
   end
 
   def pdf_params

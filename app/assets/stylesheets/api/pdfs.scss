@@ -11,10 +11,26 @@
 }
 
 
+.trash-icon {
+  font-size: 12px;
+  margin-right: 5px;
+  color: #ff4081; 
+}
+
+
+.title-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .pdf-li {
   width: 250px;
   heigth: 320px;
   margin: 20px; 
+  padding: 10px;
+  background: #3f51b5; 
+
   canvas {
     width: 250px;
     height: 320px;
@@ -23,7 +39,8 @@
   
   h4 {
    text-align: center;
-   color: black;
+   color: white;
+   font-size: 18px;
   }
 
   a {
