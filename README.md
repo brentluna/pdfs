@@ -136,7 +136,7 @@ avoid storing uneccesary data if possible. I came across a react component that
 would convert a PDF to a canvas element, allowing it to be presented as an image
 and avoid storing extra files in S3.
 
-```javscript
+```javascript
 const PdfIndex = ({pdfs, deletePdf}) => {
 
   const mapPdfs = () => {
