@@ -11,7 +11,7 @@
       "node": "7.1.0",
       "npm": "4.0.2"
     }
-  }
+  },
   "dependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
