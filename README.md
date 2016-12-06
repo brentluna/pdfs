@@ -181,4 +181,4 @@ const PdfIndex = ({pdfs, deletePdf}) => {
 - Add a sharing button to each pdf, where you can click on it to email it to
   someone
 - Polish up the design and styling
-- Add rspec tests on the rails controllers and models  
+- Add additional tests  
