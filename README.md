@@ -99,7 +99,9 @@ Controller in rails, which would take the file and create a presigned url and
 return that along with a public url. Upon receiving that response, I would make
 2 separate disptaches, one with the presigned URL to upload to S3, and one with
 the public URL to store it in my PDF table in PostgreSQL in order to keep track
-of a users PDF's.
+of a users PDF's. I utilized RSpec to test the PDF table, and make sure it was
+validating the fields correctly as well as had the appropriate assocation with
+Users.
 
 
 ```ruby
