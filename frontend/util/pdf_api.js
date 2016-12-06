@@ -3,7 +3,7 @@ export const fetchAllPdfs = (success) => (
     url: 'api/pdfs',
     method: 'GET',
     success,
-    error: (e) => console.log('error in fetchAllPdfs:', e)
+    error: e => console.log('error in fetchAllPdfs:', e)
   })
 );
 
@@ -24,7 +24,7 @@ export const getPresignedUrl = (data, success) => {
     method: 'GET',
     data: dataPassed,
     success, 
-    errors: (e) => console.log('error in getPresignedUrl:', e)
+    errors: e => console.log('error in getPresignedUrl:', e)
   })
   )
 }
