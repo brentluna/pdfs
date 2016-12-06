@@ -30,7 +30,6 @@ class Api::PdfsController < ApplicationController
   private 
   def delete_from_S3(pdf)
     pdf_key = pdf.url.split('amazonaws.com/').last
-    puts pdf_key
     s3 = Aws::S3::Resource.new(region: 'us-west-1')  
     bucket = s3.bucket('brent-pdfs')
     obj = bucket.object(pdf_key)
