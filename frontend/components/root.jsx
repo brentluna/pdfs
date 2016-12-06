@@ -17,7 +17,7 @@ const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/');
+      replace('/pdfs');
     }
   }
 
@@ -25,6 +25,7 @@ const Root = ({store}) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path='/' component={App}>
+          <IndexRoute component={LoginContainer} onEnter={_redirectIfLoggedIn} />
           <Route path='/login' component={LoginContainer} onEnter={_redirectIfLoggedIn} />
           <Route path ='/pdfs' component={PDFContainer} onEnter={_ensureLoggedIn}/>
         </Route>
