@@ -21,14 +21,16 @@ understanding of.
 - Redux 
 - AWS S3
 - PostgreSQL Database 
-
+- RSpec
 
 ## Description 
 
 
 ### Auth
 I implemented my own auth, utilzing BCrypt to generate hashed password digests from user's passwords and
-SecureRandom to generate session tokens.
+SecureRandom to generate session tokens. I utilized Rspec to create some tests
+for the User Model, testing some aspects of auth as well as the model
+  validations.
 
 ```ruby
 class User < ApplicationRecord
