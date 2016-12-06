@@ -38,7 +38,6 @@ class Login extends React.Component {
 
   renderErrors() {
     let lis = [];
-    console.log(this.props.errors)
 
     this.props.errors.forEach((error, i) => {
       lis.push(
