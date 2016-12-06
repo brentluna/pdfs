@@ -50,6 +50,11 @@
     font-size: 18px;
     border: 1px solid black;
     background: #c5cae9; 
+    cursor: pointer;
+    
+  }
+  input:hover {
+    opacity: .6;
   }
 }
 
